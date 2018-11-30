@@ -1,0 +1,256 @@
+# this is an auto generated file. This will be overwritten
+mutation CreateOrder($input: CreateOrderInput!) {
+  createOrder(input: $input) {
+    id
+    Costs
+    Weight
+    Amount
+    COGS
+    Total_Expenses
+    Marketing
+    Inventoryold
+    Budget_Costs
+    Budget_COGS
+    Date_of_usage
+    Status
+    Department {
+      id
+      Area_Code
+      Department
+      Market
+      Market_Size
+    }
+    Product {
+      id
+      Product_Type
+      Product
+      ProductId
+      Type
+    }
+    Date_Delivery
+  }
+}
+mutation UpdateOrder($input: UpdateOrderInput!) {
+  updateOrder(input: $input) {
+    id
+    Costs
+    Weight
+    Amount
+    COGS
+    Total_Expenses
+    Marketing
+    Inventoryold
+    Budget_Costs
+    Budget_COGS
+    Date_of_usage
+    Status
+    Department {
+      id
+      Area_Code
+      Department
+      Market
+      Market_Size
+    }
+    Product {
+      id
+      Product_Type
+      Product
+      ProductId
+      Type
+    }
+    Date_Delivery
+  }
+}
+mutation DeleteOrder($input: DeleteOrderInput!) {
+  deleteOrder(input: $input) {
+    id
+    Costs
+    Weight
+    Amount
+    COGS
+    Total_Expenses
+    Marketing
+    Inventoryold
+    Budget_Costs
+    Budget_COGS
+    Date_of_usage
+    Status
+    Department {
+      id
+      Area_Code
+      Department
+      Market
+      Market_Size
+    }
+    Product {
+      id
+      Product_Type
+      Product
+      ProductId
+      Type
+    }
+    Date_Delivery
+  }
+}
+mutation CreateLocation($input: CreateLocationInput!) {
+  createLocation(input: $input) {
+    id
+    Area_Code
+    Department
+    Market
+    Market_Size
+    Orders {
+      items {
+        id
+        Costs
+        Weight
+        Amount
+        COGS
+        Total_Expenses
+        Marketing
+        Inventoryold
+        Budget_Costs
+        Budget_COGS
+        Date_of_usage
+        Status
+        Date_Delivery
+      }
+      nextToken
+    }
+  }
+}
+mutation UpdateLocation($input: UpdateLocationInput!) {
+  updateLocation(input: $input) {
+    id
+    Area_Code
+    Department
+    Market
+    Market_Size
+    Orders {
+      items {
+        id
+        Costs
+        Weight
+        Amount
+        COGS
+        Total_Expenses
+        Marketing
+        Inventoryold
+        Budget_Costs
+        Budget_COGS
+        Date_of_usage
+        Status
+        Date_Delivery
+      }
+      nextToken
+    }
+  }
+}
+mutation DeleteLocation($input: DeleteLocationInput!) {
+  deleteLocation(input: $input) {
+    id
+    Area_Code
+    Department
+    Market
+    Market_Size
+    Orders {
+      items {
+        id
+        Costs
+        Weight
+        Amount
+        COGS
+        Total_Expenses
+        Marketing
+        Inventoryold
+        Budget_Costs
+        Budget_COGS
+        Date_of_usage
+        Status
+        Date_Delivery
+      }
+      nextToken
+    }
+  }
+}
+mutation CreateProduct($input: CreateProductInput!) {
+  createProduct(input: $input) {
+    id
+    Product_Type
+    Product
+    ProductId
+    Type
+    Orders {
+      items {
+        id
+        Costs
+        Weight
+        Amount
+        COGS
+        Total_Expenses
+        Marketing
+        Inventoryold
+        Budget_Costs
+        Budget_COGS
+        Date_of_usage
+        Status
+        Date_Delivery
+      }
+      nextToken
+    }
+  }
+}
+mutation UpdateProduct($input: UpdateProductInput!) {
+  updateProduct(input: $input) {
+    id
+    Product_Type
+    Product
+    ProductId
+    Type
+    Orders {
+      items {
+        id
+        Costs
+        Weight
+        Amount
+        COGS
+        Total_Expenses
+        Marketing
+        Inventoryold
+        Budget_Costs
+        Budget_COGS
+        Date_of_usage
+        Status
+        Date_Delivery
+      }
+      nextToken
+    }
+  }
+}
+mutation DeleteProduct($input: DeleteProductInput!) {
+  deleteProduct(input: $input) {
+    id
+    Product_Type
+    Product
+    ProductId
+    Type
+    Orders {
+      items {
+        id
+        Costs
+        Weight
+        Amount
+        COGS
+        Total_Expenses
+        Marketing
+        Inventoryold
+        Budget_Costs
+        Budget_COGS
+        Date_of_usage
+        Status
+        Date_Delivery
+      }
+      nextToken
+    }
+  }
+}

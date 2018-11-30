@@ -1,0 +1,7 @@
+{
+    "AppSyncApiName": "logisticsdb",
+    "schemaGraphql": "s3://logisticsdb-20181130124045-deployment/amplify-appsync-files/schema.graphql.1543595943486",
+    "ResolverBucket": "logisticsdb-20181130124045-deployment",
+    "ResolverRootKey": "amplify-appsync-files",
+    "DeploymentTimestamp": "1543595943486"
+}

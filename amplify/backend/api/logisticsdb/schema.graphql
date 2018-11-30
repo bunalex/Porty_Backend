@@ -1,0 +1,37 @@
+
+type Order @model {
+	id: ID!
+	Costs: Int
+	Weight: Int
+	Amount: Int
+	COGS: Int
+	Total_Expenses: Int
+	Marketing: Int
+	Inventoryold: Int
+	Budget_Costs: Int
+	Budget_COGS: Int
+	Date_of_usage: String
+	Status: String
+	Department: Location @connection(name: "LocationOrders")
+	Product: Product @connection(name: "ProductOrders" )
+	Date_Delivery: String
+}
+type Location @model {
+	id: ID!
+	Area_Code: Int!
+	Department: String
+	Market: String
+	Market_Size: String
+	Orders: [Order] @connection(name: "LocationOrders")
+}
+type Product @model {
+	id: ID!
+	Product_Type: String
+	Product: String
+	ProductId: Int
+	Type: String
+	Orders: [Order] @connection(name: "ProductOrders")
+}
+
+
+	

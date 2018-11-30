@@ -1,0 +1,32 @@
+{
+	"providers": {
+		"awscloudformation": {
+			"AuthRoleName": "logisticsdb-20181130124045-authRole",
+			"UnauthRoleArn": "arn:aws:iam::177681334468:role/logisticsdb-20181130124045-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::177681334468:role/logisticsdb-20181130124045-authRole",
+			"Region": "eu-central-1",
+			"DeploymentBucketName": "logisticsdb-20181130124045-deployment",
+			"UnauthRoleName": "logisticsdb-20181130124045-unauthRole",
+			"StackName": "logisticsdb-20181130124045",
+			"StackId": "arn:aws:cloudformation:eu-central-1:177681334468:stack/logisticsdb-20181130124045/c9aa2bb0-f494-11e8-bdee-0af912389690"
+		}
+	},
+	"api": {
+		"logisticsdb": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"securityType": "API_KEY",
+				"GraphQLAPIIdOutput": "henlopcalzag3ksfgmpj6r4jum",
+				"GraphQLAPIEndpointOutput": "https://uh3zyd7uezegxmeiml7oxwd47y.appsync-api.eu-central-1.amazonaws.com/graphql",
+				"GraphQLAPIKeyOutput": "da2-yex5kqpuxbc7bohat6efadjthu"
+			},
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/logisticsdb-20181130124045-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+				"logicalId": "apilogisticsdb"
+			},
+			"lastPushTimeStamp": "2018-11-30T16:41:36.206Z",
+			"lastPushDirHash": "23WPZ6QWQQ5vgV050lifHGisrkE="
+		}
+	}
+}

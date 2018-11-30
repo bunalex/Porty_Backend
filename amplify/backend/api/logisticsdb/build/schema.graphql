@@ -1,0 +1,264 @@
+type Order {
+  id: ID!
+  Costs: Int
+  Weight: Int
+  Amount: Int
+  COGS: Int
+  Total_Expenses: Int
+  Marketing: Int
+  Inventoryold: Int
+  Budget_Costs: Int
+  Budget_COGS: Int
+  Date_of_usage: String
+  Status: String
+  Department: Location
+  Product: Product
+  Date_Delivery: String
+}
+
+type Location {
+  id: ID!
+  Area_Code: Int!
+  Department: String
+  Market: String
+  Market_Size: String
+  Orders(filter: ModelOrderFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelOrderConnection
+}
+
+type Product {
+  id: ID!
+  Product_Type: String
+  Product: String
+  ProductId: Int
+  Type: String
+  Orders(filter: ModelOrderFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelOrderConnection
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+type ModelOrderConnection {
+  items: [Order]
+  nextToken: String
+}
+
+input ModelStringFilterInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+}
+
+input ModelIDFilterInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+}
+
+input ModelIntFilterInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  contains: Int
+  notContains: Int
+  between: [Int]
+}
+
+input ModelFloatFilterInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  contains: Float
+  notContains: Float
+  between: [Float]
+}
+
+input ModelBooleanFilterInput {
+  ne: Boolean
+  eq: Boolean
+}
+
+input ModelOrderFilterInput {
+  id: ModelIDFilterInput
+  Costs: ModelIntFilterInput
+  Weight: ModelIntFilterInput
+  Amount: ModelIntFilterInput
+  COGS: ModelIntFilterInput
+  Total_Expenses: ModelIntFilterInput
+  Marketing: ModelIntFilterInput
+  Inventoryold: ModelIntFilterInput
+  Budget_Costs: ModelIntFilterInput
+  Budget_COGS: ModelIntFilterInput
+  Date_of_usage: ModelStringFilterInput
+  Status: ModelStringFilterInput
+  Date_Delivery: ModelStringFilterInput
+  and: [ModelOrderFilterInput]
+  or: [ModelOrderFilterInput]
+  not: ModelOrderFilterInput
+}
+
+type Query {
+  getOrder(id: ID!): Order
+  listOrders(filter: ModelOrderFilterInput, limit: Int, nextToken: String): ModelOrderConnection
+  getLocation(id: ID!): Location
+  listLocations(filter: ModelLocationFilterInput, limit: Int, nextToken: String): ModelLocationConnection
+  getProduct(id: ID!): Product
+  listProducts(filter: ModelProductFilterInput, limit: Int, nextToken: String): ModelProductConnection
+}
+
+input CreateOrderInput {
+  id: ID
+  Costs: Int
+  Weight: Int
+  Amount: Int
+  COGS: Int
+  Total_Expenses: Int
+  Marketing: Int
+  Inventoryold: Int
+  Budget_Costs: Int
+  Budget_COGS: Int
+  Date_of_usage: String
+  Status: String
+  Date_Delivery: String
+  orderDepartmentId: ID
+  orderProductId: ID
+}
+
+input UpdateOrderInput {
+  id: ID!
+  Costs: Int
+  Weight: Int
+  Amount: Int
+  COGS: Int
+  Total_Expenses: Int
+  Marketing: Int
+  Inventoryold: Int
+  Budget_Costs: Int
+  Budget_COGS: Int
+  Date_of_usage: String
+  Status: String
+  Date_Delivery: String
+  orderDepartmentId: ID
+  orderProductId: ID
+}
+
+input DeleteOrderInput {
+  id: ID
+}
+
+type Mutation {
+  createOrder(input: CreateOrderInput!): Order
+  updateOrder(input: UpdateOrderInput!): Order
+  deleteOrder(input: DeleteOrderInput!): Order
+  createLocation(input: CreateLocationInput!): Location
+  updateLocation(input: UpdateLocationInput!): Location
+  deleteLocation(input: DeleteLocationInput!): Location
+  createProduct(input: CreateProductInput!): Product
+  updateProduct(input: UpdateProductInput!): Product
+  deleteProduct(input: DeleteProductInput!): Product
+}
+
+type Subscription {
+  onCreateOrder: Order @aws_subscribe(mutations: ["createOrder"])
+  onUpdateOrder: Order @aws_subscribe(mutations: ["updateOrder"])
+  onDeleteOrder: Order @aws_subscribe(mutations: ["deleteOrder"])
+  onCreateLocation: Location @aws_subscribe(mutations: ["createLocation"])
+  onUpdateLocation: Location @aws_subscribe(mutations: ["updateLocation"])
+  onDeleteLocation: Location @aws_subscribe(mutations: ["deleteLocation"])
+  onCreateProduct: Product @aws_subscribe(mutations: ["createProduct"])
+  onUpdateProduct: Product @aws_subscribe(mutations: ["updateProduct"])
+  onDeleteProduct: Product @aws_subscribe(mutations: ["deleteProduct"])
+}
+
+type ModelLocationConnection {
+  items: [Location]
+  nextToken: String
+}
+
+input ModelLocationFilterInput {
+  id: ModelIDFilterInput
+  Area_Code: ModelIntFilterInput
+  Department: ModelStringFilterInput
+  Market: ModelStringFilterInput
+  Market_Size: ModelStringFilterInput
+  and: [ModelLocationFilterInput]
+  or: [ModelLocationFilterInput]
+  not: ModelLocationFilterInput
+}
+
+input CreateLocationInput {
+  id: ID
+  Area_Code: Int!
+  Department: String
+  Market: String
+  Market_Size: String
+}
+
+input UpdateLocationInput {
+  id: ID!
+  Area_Code: Int
+  Department: String
+  Market: String
+  Market_Size: String
+}
+
+input DeleteLocationInput {
+  id: ID
+}
+
+type ModelProductConnection {
+  items: [Product]
+  nextToken: String
+}
+
+input ModelProductFilterInput {
+  id: ModelIDFilterInput
+  Product_Type: ModelStringFilterInput
+  Product: ModelStringFilterInput
+  ProductId: ModelIntFilterInput
+  Type: ModelStringFilterInput
+  and: [ModelProductFilterInput]
+  or: [ModelProductFilterInput]
+  not: ModelProductFilterInput
+}
+
+input CreateProductInput {
+  id: ID
+  Product_Type: String
+  Product: String
+  ProductId: Int
+  Type: String
+}
+
+input UpdateProductInput {
+  id: ID!
+  Product_Type: String
+  Product: String
+  ProductId: Int
+  Type: String
+}
+
+input DeleteProductInput {
+  id: ID
+}

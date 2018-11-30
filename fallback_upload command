@@ -1,0 +1,11 @@
+  handleCreateLocation = () => {
+    const locationDetails = {
+	input: {        
+		id: '2352525',
+		Area_Code: '02525',
+		Department: 'Best Department',
+		Market: 'Big Market',
+		Market_Size: 'Biggest Market',
+	}
+    };
+    

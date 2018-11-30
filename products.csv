@@ -1,0 +1,14 @@
+Product Type,Product,ProductId,Type
+Raw material,iron bar,1,Regular
+Raw material,screws,2,Regular
+Raw material,copper bar,3,Decaf
+Raw material,batch of rubber,4,Regular
+Device,Laptops,5,Regular
+Device,Smart watchs,6,Decaf
+Device,onboard computer,7,Regular
+Raw material,Cable type AAA,8,Decaf
+tools,protection glasses,9,Decaf
+tools,cable ties,10,Decaf
+product,smart vehicle lock model B,11,Regular
+product,tyres model y,12,Regular
+product,tyres model x,13,Regular

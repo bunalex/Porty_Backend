@@ -1,0 +1,14 @@
+{
+    "providers": {
+        "awscloudformation": {
+            "AuthRoleName": "logisticsdb-20181130124045-authRole",
+            "UnauthRoleArn": "arn:aws:iam::177681334468:role/logisticsdb-20181130124045-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::177681334468:role/logisticsdb-20181130124045-authRole",
+            "Region": "eu-central-1",
+            "DeploymentBucketName": "logisticsdb-20181130124045-deployment",
+            "UnauthRoleName": "logisticsdb-20181130124045-unauthRole",
+            "StackName": "logisticsdb-20181130124045",
+            "StackId": "arn:aws:cloudformation:eu-central-1:177681334468:stack/logisticsdb-20181130124045/c9aa2bb0-f494-11e8-bdee-0af912389690"
+        }
+    }
+}
